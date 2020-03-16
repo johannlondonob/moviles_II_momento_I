@@ -78,30 +78,42 @@ public class FormularioActivity extends AppCompatActivity {
         buttonFormularioGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numeroTarjeta = editTextNumeroTarjeta.getText().toString();
-                mesVencimiento = editTextMesVencimiento.getText().toString();
-                anioVencimiento = editTextAnioVencimiento.getText().toString();
-                franquicia = spinnerFranquicias.getSelectedItem().toString();
-                cupoMax = Double.parseDouble(editTextCupoMax.getText().toString());
-                saldoDisponible = Double.parseDouble(editTextSaldoDisponible.getText().toString());
-                saldoDeuda = Double.parseDouble(editTextSaldoDeuda.getText().toString());
-
                 int errores = 0;
-                if (numeroTarjeta.length() < 16) {
-                    Snackbar.make(v, "El número de la tarjeta tiene una longitud inferior al establecido", Snackbar.LENGTH_LONG).show();
+                try {
+                    numeroTarjeta = editTextNumeroTarjeta.getText().toString();
+                    mesVencimiento = editTextMesVencimiento.getText().toString();
+                    anioVencimiento = editTextAnioVencimiento.getText().toString();
+                    franquicia = spinnerFranquicias.getSelectedItem().toString();
+                    cupoMax = Double.parseDouble(editTextCupoMax.getText().toString());
+                    saldoDisponible = Double.parseDouble(editTextSaldoDisponible.getText().toString());
+                    saldoDeuda = Double.parseDouble(editTextSaldoDeuda.getText().toString());
+                } catch (Exception e) {
+                    Snackbar.make(v, "Campos vacíos", Snackbar.LENGTH_LONG).show();
+                }
+
+                if (numeroTarjeta.isEmpty() || numeroTarjeta.length() < 16) {
+                    Snackbar.make(v, "El número de la tarjeta tiene una longitud inferior al reglamentado", Snackbar.LENGTH_LONG).show();
                     editTextNumeroTarjeta.requestFocus();
                     errores++;
-                } else if (Integer.parseInt(mesVencimiento) > 12) {
-                    Snackbar.make(v, "La fecha no está entre los 12 meses del año", Snackbar.LENGTH_LONG).show();
+                } else if (mesVencimiento.isEmpty() || Integer.parseInt(mesVencimiento) > 12) {
+                    Snackbar.make(v, "Valide el mes de vencimiento", Snackbar.LENGTH_LONG).show();
                     editTextMesVencimiento.requestFocus();
                     errores++;
-                } else if (Integer.parseInt(anioVencimiento) > 2200) {
-                    Snackbar.make(v, "No durarás tanto. Establece un año válido", Snackbar.LENGTH_LONG).show();
+                } else if (anioVencimiento.isEmpty() || Integer.parseInt(anioVencimiento) > 2200) {
+                    Snackbar.make(v, "Establece un año válido", Snackbar.LENGTH_LONG).show();
                     editTextAnioVencimiento.requestFocus();
                     errores++;
-                } else if (cupoMax > 1500000) {
+                } else if (cupoMax == 0 || cupoMax > 1500000) {
                     Snackbar.make(v, "El cupo máximo no debe superar 1'500.000", Snackbar.LENGTH_LONG).show();
                     editTextCupoMax.requestFocus();
+                    errores++;
+                } else if (saldoDisponible == 0) {
+                    Snackbar.make(v, "Establece un saldo disponible válido", Snackbar.LENGTH_LONG).show();
+                    editTextSaldoDisponible.requestFocus();
+                    errores++;
+                } else if (saldoDeuda == 0 ) {
+                    Snackbar.make(v, "Establece un saldo deuda válido", Snackbar.LENGTH_LONG).show();
+                    editTextSaldoDeuda.requestFocus();
                     errores++;
                 } else {
                     errores--;

@@ -63,7 +63,7 @@ public class DetalleActivity extends AppCompatActivity {
 
                 if (resultado > 0) {
                     Intent intent = new Intent(DetalleActivity.this, TarjetasActivity.class);
-                    intent.putExtra("msg", "Se eliminó correctamente la tarjeta");
+                    intent.putExtra("msg_tarjetas", "Se eliminó correctamente la tarjeta");
                     startActivity(intent);
                 } else {
                     Snackbar.make(v, "No se pudo eliminar la tarjeta" + model.get_id(), Snackbar.LENGTH_SHORT).show();

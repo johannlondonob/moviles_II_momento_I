@@ -41,7 +41,7 @@ public class TarjetasActivity extends AppCompatActivity {
         snackEliminado = findViewById(R.id.viewSnackEliminado);
 
         if (bundle != null) {
-            String mensaje = (String) bundle.getSerializable("msg_formulario");
+            String mensaje = (String) bundle.getSerializable("msg_tarjetas");
             Snackbar.make(snackEliminado, mensaje, Snackbar.LENGTH_LONG).show();
         }
 
