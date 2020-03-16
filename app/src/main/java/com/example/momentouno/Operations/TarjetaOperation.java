@@ -58,7 +58,7 @@ public class TarjetaOperation {
         }
     }
 
-    public int borrarTatjeta(int id) {
+    public int borrarTarjeta(int id) {
         try {
             String sqlWhere = "id = ?";
             String idString = String.valueOf(id);
@@ -89,40 +89,6 @@ public class TarjetaOperation {
             return (int) database.update(NOMBRE_TABLA, values, sqlWhere, whereArgs);
         } catch (Exception e) {
             return -1;
-        }
-    }
-
-    public ArrayList<String> seleccionarTarjetasString() {
-        ArrayList<String> tarjetasString = new ArrayList<>();
-
-        try {
-            openRead();
-            Cursor cursor = database.query(NOMBRE_TABLA, null, null, null, null, null, null);
-
-            if (cursor.getCount() > 0) {
-                cursor.moveToFirst();
-                while (cursor.moveToNext()) {
-                    int id;
-                    String numeroTarjeta, mesVencimiento, anioVencimiento, franquicia;
-                    double cupoMax, saldoDisponible, saldoDeuda;
-
-                    id = cursor.getInt(cursor.getColumnIndex("id"));
-                    numeroTarjeta = cursor.getString(cursor.getColumnIndex("numero_tarjeta"));
-                    mesVencimiento = cursor.getString(cursor.getColumnIndex("mes_vencimiento"));
-                    anioVencimiento = cursor.getString(cursor.getColumnIndex("anio_vencimiento"));
-                    franquicia = cursor.getString(cursor.getColumnIndex("franquicia"));
-                    cupoMax = cursor.getDouble(cursor.getColumnIndex("cupo_max"));
-                    saldoDisponible = cursor.getDouble(cursor.getColumnIndex("saldo_disponible"));
-                    saldoDeuda = cursor.getDouble(cursor.getColumnIndex("saldo_deuda"));
-
-                    TarjetaModel model = new TarjetaModel(numeroTarjeta, mesVencimiento, anioVencimiento, cupoMax, saldoDisponible, saldoDeuda, franquicia);
-                    tarjetasString.add(model.toString());
-                }
-            }
-
-            return tarjetasString;
-        } catch (Exception e) {
-            return tarjetasString;
         }
     }
 

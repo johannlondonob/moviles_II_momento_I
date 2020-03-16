@@ -59,7 +59,7 @@ public class DetalleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-                int resultado = operation.borrarTatjeta(model.get_id());
+                int resultado = operation.borrarTarjeta(model.get_id());
 
                 if (resultado > 0) {
                     Intent intent = new Intent(DetalleActivity.this, TarjetasActivity.class);
@@ -74,10 +74,19 @@ public class DetalleActivity extends AppCompatActivity {
         buttonDetalleEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String auxiliarNumeroTarjeta = "";
+                for (int i = 0; i <= numeroTarjeta.length() + 1; i++) {
+                    if (i != 0){
+                        if (i % 4 == 0) {
+                            int index1 = i - 4;
+                            auxiliarNumeroTarjeta += numeroTarjeta.substring(index1, i) + "";
+                        }
+                    }
+                }
                 onBackPressed();
                 Intent intent = new Intent(DetalleActivity.this, FormularioActivity.class);
                 intent.putExtra("id", model.get_id());
-                intent.putExtra("numeroTarjeta", numeroTarjeta);
+                intent.putExtra("numeroTarjeta", auxiliarNumeroTarjeta);
                 intent.putExtra("mesVencimiento", mesVencimiento);
                 intent.putExtra("anioVencimiento", anioVencimiento);
                 intent.putExtra("cupoMax", cupoMax);

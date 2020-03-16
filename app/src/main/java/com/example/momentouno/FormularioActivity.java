@@ -29,7 +29,6 @@ public class FormularioActivity extends AppCompatActivity {
     private String numeroTarjeta, mesVencimiento, anioVencimiento, franquicia;
     private double cupoMax, saldoDisponible, saldoDeuda;
     private int idModel = -1;
-    private boolean ok = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,12 +78,10 @@ public class FormularioActivity extends AppCompatActivity {
         buttonFormularioGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 numeroTarjeta = editTextNumeroTarjeta.getText().toString();
                 mesVencimiento = editTextMesVencimiento.getText().toString();
                 anioVencimiento = editTextAnioVencimiento.getText().toString();
                 franquicia = spinnerFranquicias.getSelectedItem().toString();
-
                 cupoMax = Double.parseDouble(editTextCupoMax.getText().toString());
                 saldoDisponible = Double.parseDouble(editTextSaldoDisponible.getText().toString());
                 saldoDeuda = Double.parseDouble(editTextSaldoDeuda.getText().toString());
@@ -110,7 +107,7 @@ public class FormularioActivity extends AppCompatActivity {
                     errores--;
                 }
 
-                if (mesVencimiento.length() <= 1 || mesVencimiento.contains(" ")) {
+                if (mesVencimiento.length() <= 1) {
                     mesVencimiento = "0" + mesVencimiento;
                 }
 
@@ -124,6 +121,7 @@ public class FormularioActivity extends AppCompatActivity {
                             limpiarCampos();
                             onBackPressed();
                             Intent intent = new Intent(FormularioActivity.this, TarjetasActivity.class);
+                            intent.putExtra("msg_formulario", "La tarjeta " + numeroTarjeta + " se actualizó correctamente.");
                             startActivity(intent);
                         } else {
                             Snackbar.make(v, "No se actualizó", Snackbar.LENGTH_LONG).show();
@@ -137,6 +135,7 @@ public class FormularioActivity extends AppCompatActivity {
                             limpiarCampos();
                             onBackPressed();
                             Intent intent = new Intent(FormularioActivity.this, TarjetasActivity.class);
+                            intent.putExtra("msg_formulario", "La tarjeta " + numeroTarjeta + " fue creada satisfactoriamente.");
                             startActivity(intent);
                         } else {
                             Snackbar.make(v, "No se guardó", Snackbar.LENGTH_LONG).show();

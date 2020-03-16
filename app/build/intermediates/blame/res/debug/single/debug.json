@@ -36,6 +36,10 @@
         "source": "R:\\Trabajos\\Desarrollo\\Android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "R:\\Trabajos\\Desarrollo\\Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cardman.png.flat",
+        "source": "R:\\Trabajos\\Desarrollo\\Android\\app\\src\\main\\res\\drawable\\cardman.png"
+    },
+    {
         "merged": "R:\\Trabajos\\Desarrollo\\Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "R:\\Trabajos\\Desarrollo\\Android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
@@ -54,6 +58,10 @@
     {
         "merged": "R:\\Trabajos\\Desarrollo\\Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "R:\\Trabajos\\Desarrollo\\Android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "R:\\Trabajos\\Desarrollo\\Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus_96.png.flat",
+        "source": "R:\\Trabajos\\Desarrollo\\Android\\app\\src\\main\\res\\drawable\\plus_96.png"
     },
     {
         "merged": "R:\\Trabajos\\Desarrollo\\Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
