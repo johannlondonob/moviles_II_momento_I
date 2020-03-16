@@ -1,0 +1,60 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.momentouno"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:5:5-25:19
+12        android:allowBackup="true"
+12-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.1.0] C:\Users\Johan\.gradle\caches\transforms-2\files-2.1\1cd7eff88f5e86d0249af2958bf465f0\core-1.1.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:10:9-35
+19        android:theme="@style/AppTheme" >
+19-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:11:9-40
+20        <activity
+20-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:12:9-15:68
+21            android:name="com.example.momentouno.TarjetasActivity"
+21-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:13:13-45
+22            android:label="@string/title_activity_tarjetas"
+22-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:14:13-60
+23            android:theme="@style/AppTheme.NoActionBar" />
+23-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:15:13-56
+24        <activity android:name="com.example.momentouno.DetalleActivity" />
+24-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:16:9-53
+24-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:16:19-50
+25        <activity android:name="com.example.momentouno.FormularioActivity" />
+25-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:17:9-56
+25-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:17:19-53
+26        <activity android:name="com.example.momentouno.MainActivity" >
+26-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:18:9-24:20
+26-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:18:19-47
+27            <intent-filter>
+27-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:19:13-23:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:20:17-69
+28-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:20:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:22:17-77
+30-->R:\Trabajos\Desarrollo\Android\app\src\main\AndroidManifest.xml:22:27-74
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>

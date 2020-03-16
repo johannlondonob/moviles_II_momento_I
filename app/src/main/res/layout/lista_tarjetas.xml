@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTintMode="multiply">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15sp"
+            android:animateLayoutChanges="true"
+            android:background="@color/colorPrimaryDark"
+            android:padding="5sp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5sp"
+                android:gravity="center|end">
+
+                <ImageView
+                    android:id="@+id/imageViewFranquicia"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:elevation="2sp"
+                    android:scaleType="fitCenter" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5sp"
+                android:gravity="start">
+
+                <TextView
+                    android:id="@+id/textViewNumeroTarjeta"
+                    style="@android:style/Widget.Material.TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif-monospace"
+                    android:textAlignment="viewStart"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5sp">
+
+                <TextView
+                    android:id="@+id/textViewFechaVencimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif-monospace"
+                    android:textAlignment="viewStart"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5sp"
+                android:gravity="start">
+
+                <TextView
+                    android:id="@+id/textViewNombre"
+                    style="@android:style/Widget.Material.TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif-monospace"
+                    android:text="Mr Foxx"
+                    android:textAlignment="viewStart"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
